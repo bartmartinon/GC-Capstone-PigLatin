@@ -1,0 +1,13 @@
+C:\Users\Martinon\Documents\Grand Circus\VS2019 Projects\PigLatinCapstone\PigLatinCapstone\bin\Debug\netcoreapp3.1\PigLatinCapstone.exe
+C:\Users\Martinon\Documents\Grand Circus\VS2019 Projects\PigLatinCapstone\PigLatinCapstone\bin\Debug\netcoreapp3.1\PigLatinCapstone.deps.json
+C:\Users\Martinon\Documents\Grand Circus\VS2019 Projects\PigLatinCapstone\PigLatinCapstone\bin\Debug\netcoreapp3.1\PigLatinCapstone.runtimeconfig.json
+C:\Users\Martinon\Documents\Grand Circus\VS2019 Projects\PigLatinCapstone\PigLatinCapstone\bin\Debug\netcoreapp3.1\PigLatinCapstone.runtimeconfig.dev.json
+C:\Users\Martinon\Documents\Grand Circus\VS2019 Projects\PigLatinCapstone\PigLatinCapstone\bin\Debug\netcoreapp3.1\PigLatinCapstone.dll
+C:\Users\Martinon\Documents\Grand Circus\VS2019 Projects\PigLatinCapstone\PigLatinCapstone\bin\Debug\netcoreapp3.1\PigLatinCapstone.pdb
+C:\Users\Martinon\Documents\Grand Circus\VS2019 Projects\PigLatinCapstone\PigLatinCapstone\obj\Debug\netcoreapp3.1\PigLatinCapstone.csprojAssemblyReference.cache
+C:\Users\Martinon\Documents\Grand Circus\VS2019 Projects\PigLatinCapstone\PigLatinCapstone\obj\Debug\netcoreapp3.1\PigLatinCapstone.AssemblyInfoInputs.cache
+C:\Users\Martinon\Documents\Grand Circus\VS2019 Projects\PigLatinCapstone\PigLatinCapstone\obj\Debug\netcoreapp3.1\PigLatinCapstone.AssemblyInfo.cs
+C:\Users\Martinon\Documents\Grand Circus\VS2019 Projects\PigLatinCapstone\PigLatinCapstone\obj\Debug\netcoreapp3.1\PigLatinCapstone.csproj.CoreCompileInputs.cache
+C:\Users\Martinon\Documents\Grand Circus\VS2019 Projects\PigLatinCapstone\PigLatinCapstone\obj\Debug\netcoreapp3.1\PigLatinCapstone.dll
+C:\Users\Martinon\Documents\Grand Circus\VS2019 Projects\PigLatinCapstone\PigLatinCapstone\obj\Debug\netcoreapp3.1\PigLatinCapstone.pdb
+C:\Users\Martinon\Documents\Grand Circus\VS2019 Projects\PigLatinCapstone\PigLatinCapstone\obj\Debug\netcoreapp3.1\PigLatinCapstone.genruntimeconfig.cache

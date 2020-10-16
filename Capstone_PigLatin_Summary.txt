@@ -10,7 +10,7 @@ ToUpper():
 If there was a capital letter in the original word, ToUpper was used to make sure that the translated word also have a capital letter.
 
 ToLower():
-Mainly used to make sure that the IsAVowel method gets lowercase letters. Also to make sure that the original word's capital letter is made lowercase once the substrings are rearranged.
+Mainly used to make sure that the IsAVowel method gets lowercase letters. Also to make sure that the original word's is made lowercase in case a capital letter does show in the char array.
 
 ToCharArray():
 Handy for the Vowel Check Loop since we'd need to go through each char to know where to split the word into substrings.
@@ -24,5 +24,11 @@ User input validation. But for this project, I decided to try something else for
 Equals():
 Used for the continuation prompt at the end of the loop. Accepts only "y" and "Y" as yes answers.
 
+Contains():
+Used to check if any words contains a "@", as attempting to translate email addresses will cause issues such as scrambling information.
+
 First():
 I didn't find all that much documentation on this one, so it might be old-school, but yes, First() apparently works and it returns the first character of a string. Used to change the case of the substrings' first letters' if the original word was capitalized.
+
+Any():
+Another one that doesn't show up on the Microsoft Docs, so compatibility is still questionable similar to first. IDE shows that it's a Lambda Expression that takes in a predicate. This seems to check every char in the string if the boolean in it returns true. Super handy in combination with Char.IsDigit adn Char.IsSymbol to search for any digits or symbols in a word. Helps avoid any situations with numbers, mathematical operations or prices.
