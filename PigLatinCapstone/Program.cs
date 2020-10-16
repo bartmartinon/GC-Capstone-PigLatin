@@ -35,73 +35,7 @@ namespace PigLatinCapstone
                 for (int i = 0; i < words.Length; i++)
                 {
                     string word = words[i];
-                    string pigWord = word;
-                    char firstLetter = word[0]; // Grab the first letter of the current word
-                    char lastChar = word[word.Length - 1]; // Grab the last character of the current word
-
-                    // Check if the last character is a punctuation mark
-                    if (Char.IsPunctuation(lastChar))
-                    {
-                        word = word.Substring(0, word.Length - 1); // Remove the punctuation mark, it will be returned later
-                    }
-
-                    // Check if the string contains either a numerical value (digits) or any symbols that warrant the translation to be
-                    // ignored to avoid scrambling information such as numbers, email addresses and prices.
-                    if (word.Any(char.IsDigit) || word.Any(char.IsSymbol) || word.Contains('@'))
-                    {
-                        pigWord = word;
-                    }
-                    // Check if the first letter of the word is a vowel. If so, add "way" to the end
-                    else if (IsAVowel(Char.ToLower(firstLetter)))
-                    {
-                        pigWord = word + "way";
-                        
-                        // If a punctuation mark was found and removed, add it back to the translated word
-                        if (Char.IsPunctuation(lastChar))
-                        {
-                            pigWord += lastChar;
-                        }
-                    }
-                    else
-                    {
-                        // Convert the word string into a char array
-                        char[] wordChars = word.ToCharArray();
-
-                        // Convert the original word to lowercase
-                        word = word.ToLower();
-
-                        // Check if the first letter is capitalized
-                        bool isFirstLetterUpper = Char.IsUpper(wordChars[0]);
-
-                        // Vowel Check Loop
-                        // Go through the character array and keep track of the index number of the first vowel found
-                        for (int j = 0; j < wordChars.Length; j++)
-                        {
-                            if (IsAVowel(Char.ToLower(wordChars[j])))
-                            {
-                                // Once the first vowel is found, split the original string into two substrings around that index.
-                                // Add "ay" at the end of the new latter substring.
-                                string sub1 = word.Substring(0, j) + "ay";
-                                string sub2 = word.Substring(j);
-
-                                // If the first letter of the original string was capitalized, capitalize the first latter of the new former substring.
-                                if (isFirstLetterUpper)
-                                {
-                                    sub2 = sub2.First().ToString().ToUpper() + sub2.Substring(1);
-                                }
-
-                                // Form the new translated word, and then break the Vowel Check Loop
-                                pigWord = sub2 + sub1;
-
-                                // If a punctuation mark was found and removed, add it back to the translated word
-                                if (Char.IsPunctuation(lastChar))
-                                {
-                                    pigWord += lastChar;
-                                }
-                                break; // Break the loop, no longer need to check other letters (if not there, would cause if multiple vowels are found)
-                            }
-                        }
-                    }
+                    string pigWord = TranslateWord(word);
                     pigWords[i] = pigWord; // Add translated word to array
                 }
 
@@ -136,6 +70,80 @@ namespace PigLatinCapstone
             }
         }
 
+        // Takes a word as input and returns the appropriately translated word
+        public static string TranslateWord(string word)
+        {
+            string pigWord = word;
+            char firstLetter = word[0]; // Grab the first letter of the current word
+            char lastChar = word[word.Length - 1]; // Grab the last character of the current word
+
+            // Check if the last character is a punctuation mark
+            if (Char.IsPunctuation(lastChar))
+            {
+                word = word.Substring(0, word.Length - 1); // Remove the punctuation mark, it will be returned later
+            }
+
+            // Check if the string contains either a numerical value (digits) or any symbols that warrant the translation to be
+            // ignored to avoid scrambling information such as numbers, email addresses and prices.
+            if (word.Any(char.IsDigit) || word.Any(char.IsSymbol) || word.Contains('@'))
+            {
+                pigWord = word;
+            }
+            // Check if the first letter of the word is a vowel. If so, add "way" to the end
+            else if (IsAVowel(Char.ToLower(firstLetter)))
+            {
+                pigWord = word + "way";
+
+                // If a punctuation mark was found and removed, add it back to the translated word
+                if (Char.IsPunctuation(lastChar))
+                {
+                    pigWord += lastChar;
+                }
+            }
+            else
+            {
+                // Convert the word string into a char array
+                char[] wordChars = word.ToCharArray();
+
+                // Convert the original word to lowercase
+                word = word.ToLower();
+
+                // Check if the first letter is capitalized
+                bool isFirstLetterUpper = Char.IsUpper(wordChars[0]);
+
+                // Vowel Check Loop
+                // Go through the character array and keep track of the index number of the first vowel found
+                for (int j = 0; j < wordChars.Length; j++)
+                {
+                    if (IsAVowel(Char.ToLower(wordChars[j])))
+                    {
+                        // Once the first vowel is found, split the original string into two substrings around that index.
+                        // Add "ay" at the end of the new latter substring.
+                        string sub1 = word.Substring(0, j) + "ay";
+                        string sub2 = word.Substring(j);
+
+                        // If the first letter of the original string was capitalized, capitalize the first latter of the new former substring.
+                        if (isFirstLetterUpper)
+                        {
+                            sub2 = sub2.First().ToString().ToUpper() + sub2.Substring(1);
+                        }
+
+                        // Form the new translated word, and then break the Vowel Check Loop
+                        pigWord = sub2 + sub1;
+
+                        // If a punctuation mark was found and removed, add it back to the translated word
+                        if (Char.IsPunctuation(lastChar))
+                        {
+                            pigWord += lastChar;
+                        }
+                        break; // Break the loop, no longer need to check other letters (if not there, would cause if multiple vowels are found)
+                    }
+                }
+            }
+            // Return the translated word
+            return pigWord;
+        }
+        
         // Return true if input is a vowel, otherwise return false.
         public static bool IsAVowel(char letter)
         {
